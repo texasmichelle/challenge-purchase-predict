@@ -36,11 +36,29 @@ challenge.git$ $SPARK_HOME/spark-submit target/scala-2.10/interview-challenge_2.
 
 # Results
 
+## Activity Types
+
+The activity types most useful in predicting which user will convert in the future are:
+
+```
+EmailOpen  
+FormSubmit  
+EmailClickthrough  
+WebVisit  
+PageView
+```
+
+The counts for these activity types were used as features in the statistical model.
+
+## Conversion
+
 The relevant output file can be found here:
 
 ```
 output/purchasers.txt  
 ```
+
+This file contains a list of the userIds most likely to convert, sorted from most likely to least likely.  
 
 # Scalability
 
@@ -52,5 +70,5 @@ This represents an initial attempt to predict whether users will make a purchase
 
 * Incorporating sequence rather than simple counts of activity types.
 * Incorporating days between events. This data set could be formed into a time-series structure, which would preserve the time dimension included in the logs, not just the sequence of events.
-* A different type of classifier could produce different results. It might be worthwhile to compare the accuracies of different types of binary classifiers.
+* Different types of classifiers produce different results. For this example, logistic regression and random forest classifiers were compared. Random forest provided slightly better accuracy on a random sampling of the training set, but performance of the two is very similar. It might be worthwhile to investigate the accuracies of additional types of binary classifiers. MLlib's pipeline structure makes this very easy.
 
