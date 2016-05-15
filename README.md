@@ -1,6 +1,29 @@
 Interview Challenge
 ========
 
+There are two components: ChallengeApp & TraversalApp.
+
+# TraversalApp
+
+To run the solution to the tree traversal problem, compile with sbt:
+
+```
+challenge.git$ sbt compile
+```
+
+Run the TraversalApp with sbt:
+
+```
+challenge.git$ sbt run  
+Multiple main classes detected, select one to run:  
+ [1] ChallengeApp  
+ [2] TraversalApp  
+Enter number: 2  
+[info] Running TraversalApp  
+```
+
+# ChallengeApp
+
 To get started, download and install Scala 2.10, sbt, and Spark 1.6.1.
 
 ## Download and install Spark
